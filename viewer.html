@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View options | W5B</title>
+  <style>
+    body { margin: 0; background: #e9ecf0; font-family: 'PT Sans', Arial, sans-serif; }
+    .bar { display: flex; gap: 10px; justify-content: center; align-items: center; background: #c2c6cb; padding: 12px; }
+    .dots span { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 6px; }
+    .bar button { padding: 8px 16px; border: 0; border-radius: 6px; background: #fff; cursor: pointer; font-weight: 700; }
+    .bar button.active { background: #e8573a; color: #fff; }
+    .frame { display: flex; justify-content: center; padding: 20px; }
+    iframe { width: 100%; max-width: 1200px; height: 80vh; border: 0; background: #fff; transition: max-width .3s; }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></div>
+    <button data-w="1200" class="active">Desktop</button>
+    <button data-w="768">Tablet</button>
+    <button data-w="375">Phone</button>
+  </div>
+  <div class="frame"><iframe id="site" src="index.html" title="Site preview"></iframe></div>
+  <script>
+    const frame = document.getElementById('site');
+    document.querySelectorAll('.bar button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.bar button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        frame.style.maxWidth = btn.dataset.w + 'px';
+      });
+    });
+  </script>
+</body>
+</html>

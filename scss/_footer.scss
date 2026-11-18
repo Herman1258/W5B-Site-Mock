@@ -1,0 +1,47 @@
+/* ---------- FOOTER ---------- */
+.footer { background: $dark; color: #fff; }
+.footer__inner {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.footer__label { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #aab; margin-bottom: 10px; }
+.footer h2 { font-size: 26px; margin-bottom: 15px; }
+.footer p { font-size: 13px; line-height: 1.7; color: #cdd; margin-bottom: 15px; }
+.footer form { display: flex; flex-direction: column; gap: 22px; }
+.footer input,
+.footer textarea {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-family: $font;
+  font-size: 13px;
+  padding: 8px 0;
+}
+.footer textarea { height: 90px; resize: none; }
+.footer ::placeholder { color: #8a929b; }
+.footer__submit {
+  align-self: flex-start;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 22px;
+  font-family: $font;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.footer__social { display: flex; gap: 18px; margin-top: 10px; }
+.footer__social a { color: #fff; font-weight: 700; text-decoration: none; }
+.footer__bottom { background: $darker; text-align: center; padding: 20px; font-size: 12px; color: #ccc; }
+
+@media (min-width: $tablet) {
+  .footer__inner { flex-direction: row; gap: 50px; padding: 60px 40px; }
+  .footer__inner > * { flex: 1; }
+}
+@media (min-width: $desktop) {
+  .footer__inner { padding: 70px 80px; }
+}
